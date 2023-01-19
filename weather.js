@@ -19,6 +19,7 @@ export function getWeather(lat, lon, timezone) {
         })
 }
 
+//Function to filter the data into information we need
 function parseCurrentWeather({ current_weather, daily }) {
     const {
         temperature: currentTemp,

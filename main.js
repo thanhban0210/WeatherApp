@@ -2,6 +2,8 @@ import "./style.css"
 import { getWeather } from "./weather"
 import { ICON_MAP } from "./iconMap"
 
+
+//Asking user for location permission
 navigator.geolocation.getCurrentPosition(positionSuccess, positionError)
 
 function positionSuccess({ coords }) {
@@ -18,25 +20,20 @@ function positionSuccess({ coords }) {
 function positionError() {
     alert("There was an error when we try to get your location. Please allow us to use your location to get the weather's information.")
 }
-// getWeather(29.71, -95.64, Intl.DateTimeFormat().resolvedOptions().timeZone)
-//     .then(
-//         renderWeather
-//     )
-//     .catch(e => {
-//         console.error(e)
-//         alert("Error getting weather data!")
-//     })
 
+//Receive the data from APIs and render it to HTML file
 function renderWeather({ current, daily, hourly }) {
     renderCurrentWeather(current)
     renderDailyWeather(daily)
     renderHourlyWeather(hourly)
     document.body.classList.remove("blurred")
 }
+//Helper function to set value to HTML element
 function helper(selector, value, { parent = document } = {}) {
     parent.querySelector(`[data-${selector}]`).textContent = value
 }
 
+//Transfer the weather code to name of the svg file
 function getIconUrl(iconCode) {
     return `public/icon/${ICON_MAP.get(iconCode)}.svg`
 
