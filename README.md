@@ -6,6 +6,7 @@ This Weather application is designed to furnish users with accurate and up-to-da
 3. List of technologies used: HTML, CSS, JavaScript, Vite 
 
 4. Setup instructions:
+
 	Step 1: Clone the repository: Open a terminal and navigate to the directory where you want to store the project. Then, use the command git clone https://github.com/username/repository.git to clone the repository to your local machine.
 
 	Step 2: Install dependencies: Navigate to the project's root directory and use the command npm install or yarn to install all the necessary dependencies.
